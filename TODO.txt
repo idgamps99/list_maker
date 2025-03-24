@@ -1,0 +1,7 @@
+1. create DB tables
+  - users
+  - lists
+  - items
+  - seed database
+2. create get /lists endpoint
+3. create post /list endpoint
