@@ -3,5 +3,18 @@
   - lists
   - items
   - seed database
-2. create get /lists endpoint
-3. create post /list endpoint
+
+2. get /lists
+  - return all lists
+
+3. get /albums for certain list
+
+4. post /list endpoint
+  - add a new list
+
+5. post /album for certain list
+
+
+WOULD BE NICE:
+attach images to list
+attach images to album
