@@ -1,0 +1,22 @@
+CREATE TABLE albums (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    album TEXT NOT NULL,
+    artist TEXT NOT NULL,
+    release_year INTEGER,
+    list_id INTEGER NOT NULL,
+    FOREIGN KEY (list_id) REFERENCES lists(id)
+);
+
+CREATE TABLE lists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    email TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+);
