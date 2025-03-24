@@ -1,11 +1,21 @@
 GEM
   specs:
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
+    bigdecimal (3.1.9)
+    json (2.10.1)
+    json-schema (5.1.1)
+      addressable (~> 2.8)
+      bigdecimal (~> 3.1)
+    public_suffix (6.0.1)
     sqlite3 (2.6.0-x86_64-linux-gnu)
 
 PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
+  json
+  json-schema
   sqlite3
 
 BUNDLED WITH
