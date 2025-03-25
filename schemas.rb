@@ -16,10 +16,10 @@ ALBUMS_SCHEMA = {
   "type" => "array",
   "items" => {
     "type" => "object",
-    "required" => ["title", "artist", "release_year"],
+    "required" => ["album", "artist", "release_year"],
     "additionalProperties" => false,
     "properties" => {
-      "title" => {
+      "album" => {
         "type" => "string"
       },
       "artist" => {

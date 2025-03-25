@@ -10,29 +10,32 @@ DB.results_as_hash = true
 
 get "/lists" do
   content_type :json
-  lists = DB.execute("SELECT * FROM lists")
-  lists.to_json
+  get_lists.to_json
 end
 
 get "/lists/:list_id/albums" do
   content_type :json
-  albums = DB.execute("SELECT * FROM albums WHERE list_id = ?", params["list_id"])
-  albums.to_json
+  get_albums.to_json
 end
 
 post "/lists" do
   content_type :json
+
   validate(LIST_SCHEMA, parsed_body)
-  DB.execute("INSERT INTO lists (title, user_id) VALUES (?, ?)", [parsed_body["title"], parsed_body["user_id"]])
-  last_row_id = DB.last_insert_row_id
-  new_list = DB.execute("SELECT * FROM lists WHERE id = ?", last_row_id)
+  add_list(parsed_body["title"], parsed_body["user_id"])
+
   status 201
   new_list.to_json
 end
 
 
 post "/lists/:list_id/albums" do
-  # content_type :json
-  # validate(ALBUMS_SCHEMA, parsed_body)
-  # insert_albums(parsed_body, params["list_id"])
+  content_type :json
+
+  validate(ALBUMS_SCHEMA, parsed_body)
+  last_id = DB.execute("SELECT id FROM albums")[-1]["id"]
+  add_albums(parsed_body, params["list_id"])
+
+  status 201
+  new_albums(last_id).to_json
 end
