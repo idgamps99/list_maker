@@ -1,20 +1,22 @@
-1. create DB tables
+1. create DB tables - DONE
   - users
   - lists
   - items
   - seed database
 
-2. get /lists
+2. get /lists - DONE
   - return all lists
 
-3. get /albums for certain list
+3. get /albums for certain list - DONE
 
-4. post /list endpoint
+4. post /list - DONE
   - add a new list
 
-5. post /album for certain list
+5. post /album for certain list - DONE
 
 
 WOULD BE NICE:
 attach images to list
 attach images to album
+user authentication
+add description to list
