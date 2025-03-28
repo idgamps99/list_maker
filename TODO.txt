@@ -20,3 +20,4 @@ attach images to list
 attach images to album
 user authentication
 add description to list
+write specs 
