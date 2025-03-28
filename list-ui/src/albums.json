@@ -1,0 +1,44 @@
+[
+  {
+      "id": 1,
+      "album": "Music Has The Right to Children",
+      "artist": "Boards of Canada",
+      "release_year": 1998,
+      "list_id": 1
+  },
+  {
+      "id": 2,
+      "album": "Since I Left You",
+      "artist": "The Avalanches",
+      "release_year": 2000,
+      "list_id": 1
+  },
+  {
+      "id": 3,
+      "album": "Abbey Road",
+      "artist": "The Beatles",
+      "release_year": 1969,
+      "list_id": 1
+  },
+  {
+      "id": 4,
+      "album": "Laughing Stock",
+      "artist": "Talk Talk",
+      "release_year": 1990,
+      "list_id": 1
+  },
+  {
+      "id": 5,
+      "album": "Dots And Loops",
+      "artist": "Stereolab",
+      "release_year": 1997,
+      "list_id": 1
+  },
+  {
+      "id": 6,
+      "album": "Enter The Wu-Tang(36 Chambers)",
+      "artist": "Kendrick Lamar",
+      "release_year": 2015,
+      "list_id": 1
+  }
+]

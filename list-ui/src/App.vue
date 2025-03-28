@@ -1,16 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav class="navbar bg-body-tertiary ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          My List Maker
+        </a>
+      </div>
+    </nav>
+
+    <!-- <router-view/> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
@@ -20,7 +23,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+}
+
+.bg-body-tertiary {
+  background-color: #1C2B45 !important;
+}
+
+.navbar-brand {
+  color: white;
 }
 </style>

@@ -1,0 +1,41 @@
+TODO:
+
+Views:
+  homepage
+  list page
+
+Components:
+  navbar?
+  list card
+  list header
+  album card
+
+1. Make dummy data - done 
+2. Make navbar
+3. Make homepage:
+    - hard code 2 two cards within a grid
+    - pull in dummy data
+    - use dummy data to make page dynamic
+    - move component to separate file
+4. Make list page:
+    - hard code header
+    - hard code 2 list cards within a grid
+    - pull in dummy data
+    - make header card card dynamic
+    - make album cards dynamic
+    - move header card to separate file
+    - move album card to separate file
+5. Integration with backend:
+    - make get request for lists
+    - make get request for albums for a specific list
+6. Create new list form:
+    - add a new view/route
+    - create component for a form
+    - send post request to backend
+7. Add albums to list form:
+    - add a new view/route
+    - adapt form component
+    - send post request to backend
+
+1-4 are more pressing, just so you have a better idea for how it all works.
+5-7 would be nice, but not totally necessary

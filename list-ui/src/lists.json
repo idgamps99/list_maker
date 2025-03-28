@@ -1,0 +1,47 @@
+[
+  {
+      "id": 1,
+      "title": "All Time Favourites",
+      "user_id": 1
+  },
+  {
+      "id": 2,
+      "title": "Best of 2020s",
+      "user_id": 1
+  },
+  {
+      "id": 3,
+      "title": "Top Jazz",
+      "user_id": 1
+  },
+  {
+      "id": 4,
+      "title": "Underground Hip Hop",
+      "user_id": 1
+  },
+  {
+      "id": 5,
+      "title": "Ambient",
+      "user_id": 1
+  },
+  {
+      "id": 6,
+      "title": "Experimental",
+      "user_id": 1
+  },
+  {
+      "id": 7,
+      "title": "2025 Picks",
+      "user_id": 1
+  },
+  {
+      "id": 8,
+      "title": "Best Live Albums",
+      "user_id": 1
+  },
+  {
+      "id": 9,
+      "title": "Best Rock",
+      "user_id": 1
+  }
+]
