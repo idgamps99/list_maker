@@ -10,13 +10,14 @@ Components:
   list header
   album card
 
-1. Make dummy data - done 
-2. Make navbar
+1. Make dummy data - done
+2. Make navbar - done
 3. Make homepage:
-    - hard code 2 two cards within a grid
-    - pull in dummy data
-    - use dummy data to make page dynamic
-    - move component to separate file
+    - hard code 2 two cards within a grid - done
+    - pull in dummy data - done
+    - use dummy data to make page dynamic - done
+    - move component to separate file - done
+    - make each a link to a page displaying albums 
 4. Make list page:
     - hard code header
     - hard code 2 list cards within a grid

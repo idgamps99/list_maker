@@ -1,17 +1,19 @@
 <template>
     <nav class="navbar bg-body-tertiary ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <router-link to="/" class="navbar-brand">
           <img src="./assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
           My List Maker
-        </a>
+        </router-link>
       </div>
     </nav>
 
-    <!-- <router-view/> -->
+    <router-view />
+
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
@@ -22,7 +24,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: white;
 }
 
