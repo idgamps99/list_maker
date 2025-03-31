@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-
+    <h2 class="header" >My Lists</h2>
       <ListComponent
         v-for="list in lists"
         :key="list.id"
@@ -30,5 +30,10 @@ export default {
 <style>
 .card-container {
   margin: 60px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 </style>
