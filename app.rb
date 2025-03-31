@@ -28,7 +28,6 @@ post "/lists" do
   new_list.to_json
 end
 
-
 post "/lists/:list_id/albums" do
   content_type :json
 

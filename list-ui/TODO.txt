@@ -17,7 +17,7 @@ Components:
     - pull in dummy data - done
     - use dummy data to make page dynamic - done
     - move component to separate file - done
-    - make each a link to a page displaying albums 
+    - make each a dynamic link - done
 4. Make list page:
     - hard code header
     - hard code 2 list cards within a grid

@@ -3,8 +3,16 @@ import HomeView from '../views/HomeView.vue'
 import ListView from '../views/ListView.vue'
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/lists/:id', component: ListView }
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/lists/:id',
+    name: 'list',
+    component: ListView
+  }
 ]
 
 const router = createRouter({

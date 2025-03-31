@@ -1,11 +1,13 @@
 <template>
-  <div class="card-product">
-    <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Musichastherighttochildren.jpg" />
-    <div class="card-product-infos">
-      <h2>{{ list.title }}</h2>
-      <p>Some kind of description <strong>of the list</strong> here.</p>
+  <router-link :to="{ name: 'list', params: { id: this.list.id } }" :list="list">
+    <div class="card-product">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Musichastherighttochildren.jpg" alt="BOC" />
+      <div class="card-product-infos">
+        <h2>{{ list.title }}</h2>
+        <p>Some kind of description <strong>of the list</strong> here.</p>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -43,6 +45,11 @@ export default {
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .card-product .card-product-infos {

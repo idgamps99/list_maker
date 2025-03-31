@@ -1,13 +1,12 @@
 <template>
   <div class="card-container">
 
-    <router-link to="/lists/1">
       <ListComponent
         v-for="list in lists"
         :key="list.id"
         :list="list"
       />
-    </router-link>
+
   </div>
 </template>
 
@@ -31,7 +30,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 .card-container {
   margin: 60px;
 }
