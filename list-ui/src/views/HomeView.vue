@@ -22,9 +22,6 @@ export default {
   },
   components: {
     ListComponent
-  },
-  mounted () {
-    console.log(this.lists)
   }
 }
 

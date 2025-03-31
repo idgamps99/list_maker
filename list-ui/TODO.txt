@@ -19,10 +19,10 @@ Components:
     - move component to separate file - done
     - make each a dynamic link - done
 4. Make list page:
-    - hard code header
-    - hard code 2 list cards within a grid
-    - pull in dummy data
-    - make header card card dynamic
+    - hard code header - done
+    - hard code 2 list cards within a grid - done
+    - pull in dummy data - done
+    - make header card card dynamic - done
     - make album cards dynamic
     - move header card to separate file
     - move album card to separate file

@@ -1,118 +1,55 @@
 <template>
   <div class="card-container">
-    <AlbumHeader :title="getTitle()" />
 
-    <div class="album-card">
-      <div class="album-cover">
-        <div class="placeholder-text">[Album artwork]</div>
-      </div>
-      <div class="content">
-        <h2 class="artist-name">Gorō Yamaguchi</h2>
-        <h3 class="album-title">A Bell Ringing in the Empty Sky</h3>
-        <div class="album-year">(1969)</div>
-        <div class="album-genre">Honkyoku</div>
-        <div class="album-description">instrumental, acoustic, peaceful, meditative, calm</div>
-      </div>
-    </div>
+    <AlbumHeader :title="list.title" />
 
-    <div class="album-card">
-      <div class="album-cover">
-        <div class="placeholder-text">[Album artwork]</div>
-      </div>
-      <div class="content">
-        <h2 class="artist-name">Gorō Yamaguchi</h2>
-        <h3 class="album-title">A Bell Ringing in the Empty Sky</h3>
-        <div class="album-year">(1969)</div>
-        <div class="album-genre">Honkyoku</div>
-        <div class="album-description">instrumental, acoustic, peaceful, meditative, calm</div>
-      </div>
-    </div>
+    <AlbumCard
+      v-for="album in filteredAlbums"
+      :key="album.id"
+      :album="album"
+    />
+
   </div>
 </template>
 
 <script>
+import albums from '../albums.json'
 import lists from '../lists.json'
 import AlbumHeader from '@/components/AlbumHeader.vue'
+import AlbumCard from '@/components/AlbumCard.vue'
 
 export default {
   components: {
-    AlbumHeader
+    AlbumHeader,
+    AlbumCard
   },
   data () {
     return {
-      lists: lists
+      lists: lists,
+      albums: albums,
+      list: {},
+      filteredAlbums: []
     }
   },
   methods: {
-    getTitle () {
-      const list = this.lists.find((element) => {
-        return element.id === Number(this.$route.params.id)
+    getList () {
+      const list = this.lists.find((list) => {
+        return list.id === Number(this.$route.params.id)
       })
-      return list.title
+      return list
+    },
+    getFilteredAlbums () {
+      const filteredAlbums = this.albums.filter((album) => {
+        if (album.list_id === this.list.id) {
+          return album
+        }
+      })
+      return filteredAlbums
     }
+  },
+  mounted () {
+    this.list = this.getList()
+    this.filteredAlbums = this.getFilteredAlbums()
   }
 }
 </script>
-
-<style scoped>
-
-.album-card {
-  display: flex;
-  background-color: #272A37;
-  border-radius: 4px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 12000px;
-  margin-top: 10px;
-}
-
-.album-cover {
-  width: 170px;
-  height: 170px;
-  background-color: #222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.placeholder-text {
-  color: #666;
-  font-size: 12px;
-}
-
-.content {
-  padding: 14px;
-  flex-grow: 1;
-}
-
-.artist-name {
-  color: #4a9ddb;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.album-title {
-  color: #4a9ddb;
-  font-size: 18px;
-  font-style: italic;
-  margin-bottom: 6px;
-}
-
-.album-year {
-  color: #888;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.album-genre {
-  color: white;
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.album-description {
-  color: #aaa;
-  font-size: 14px;
-}
-
-</style>
