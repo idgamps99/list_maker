@@ -27,8 +27,8 @@ Components:
     - move header card to separate file
     - move album card to separate file
 5. Integration with backend:
-    - make get request for lists
-    - make get request for albums for a specific list
+    - make get request for lists - done
+    - make get request for albums for a specific list - done 
 6. Create new list form:
     - add a new view/route
     - create component for a form

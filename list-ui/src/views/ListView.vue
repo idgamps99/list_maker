@@ -4,7 +4,7 @@
     <AlbumHeader :title="list.title" />
 
     <AlbumCard
-      v-for="album in filteredAlbums"
+      v-for="album in albums"
       :key="album.id"
       :album="album"
     />
@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import albums from '../albums.json'
-import lists from '../lists.json'
+import listService from '@/services/listService'
 import AlbumHeader from '@/components/AlbumHeader.vue'
 import AlbumCard from '@/components/AlbumCard.vue'
 
@@ -25,31 +24,30 @@ export default {
   },
   data () {
     return {
-      lists: lists,
-      albums: albums,
+      lists: [],
+      albums: [],
       list: {},
       filteredAlbums: []
     }
   },
   methods: {
-    getList () {
-      const list = this.lists.find((list) => {
-        return list.id === Number(this.$route.params.id)
-      })
-      return list
-    },
-    getFilteredAlbums () {
-      const filteredAlbums = this.albums.filter((album) => {
-        if (album.list_id === this.list.id) {
-          return album
+    async fetchAlbums () {
+      const url = `http://127.0.0.1:4567/lists/${this.$route.params.id}/albums`
+      if (this.albums.length === 0 ) {
+        try {
+          const res = await fetch(url)
+          this.albums = await res.json()
+        } catch (error) {
+          console.error('Error fetching lists', error)
         }
-      })
-      return filteredAlbums
+      }
+      return this.albums
     }
   },
-  mounted () {
-    this.list = this.getList()
-    this.filteredAlbums = this.getFilteredAlbums()
+  async mounted () {
+    this.lists = await listService.fetchLists()
+    this.list = await listService.getListById(Number(this.$route.params.id))
+    this.albums = await this.fetchAlbums()
   }
 }
 </script>

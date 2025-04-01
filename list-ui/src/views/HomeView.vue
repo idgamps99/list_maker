@@ -11,6 +11,7 @@
 
 <script>
 import ListCard from '../components/ListCard.vue'
+import listService from '@/services/listService'
 
 export default {
   data () {
@@ -21,15 +22,8 @@ export default {
   components: {
     ListCard
   },
-  methods: {
-    async getLists () {
-      const res = await fetch('http://127.0.0.1:4567/lists')
-      const json = await res.json()
-      return json
-    }
-  },
   async mounted () {
-    this.lists = await this.getLists()
+    this.lists = await listService.fetchLists()
   }
 }
 </script>
