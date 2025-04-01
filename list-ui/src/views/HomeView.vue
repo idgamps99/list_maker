@@ -1,30 +1,37 @@
 <template>
   <div class="card-container">
     <h2 class="header" >My Lists</h2>
-      <ListComponent
+      <ListCard
         v-for="list in lists"
         :key="list.id"
         :list="list"
       />
-
   </div>
 </template>
 
 <script>
-import ListComponent from '../components/ListComponent.vue'
-import lists from '../lists.json'
+import ListCard from '../components/ListCard.vue'
 
 export default {
   data () {
     return {
-      lists: lists
+      lists: []
     }
   },
   components: {
-    ListComponent
+    ListCard
+  },
+  methods: {
+    async getLists () {
+      const res = await fetch('http://127.0.0.1:4567/lists')
+      const json = await res.json()
+      return json
+    }
+  },
+  async mounted () {
+    this.lists = await this.getLists()
   }
 }
-
 </script>
 
 <style>

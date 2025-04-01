@@ -1,12 +1,27 @@
 require "json"
 require "json-schema"
 require "sinatra"
+require "sinatra/cross_origin"
 require "sqlite3"
 require_relative "schemas"
 require_relative "helpers"
 
 DB = SQLite3::Database.new "db/lists"
 DB.results_as_hash = true
+
+configure do
+  enable :cross_origin
+end
+
+before do
+  response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8080'
+  response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+  response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Accept'
+end
+
+options "*" do
+  200
+end
 
 get "/lists" do
   content_type :json

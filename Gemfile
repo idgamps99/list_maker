@@ -1,4 +1,5 @@
 gem "sinatra"
+gem "sinatra-cross_origin"
 gem "sqlite3"
 gem "json"
 gem "json-schema"
