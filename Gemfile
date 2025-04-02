@@ -1,5 +1,5 @@
 gem "sinatra"
 gem "sinatra-cross_origin"
 gem "sqlite3"
-gem "json"
+gem "json", ">= 2.10.2"
 gem "json-schema"
