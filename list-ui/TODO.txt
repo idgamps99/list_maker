@@ -28,7 +28,7 @@ Components:
     - move album card to separate file
 5. Integration with backend:
     - make get request for lists - done
-    - make get request for albums for a specific list - done 
+    - make get request for albums for a specific list - done
 6. Create new list form:
     - add a new view/route
     - create component for a form
@@ -37,6 +37,16 @@ Components:
     - add a new view/route
     - adapt form component
     - send post request to backend
+
+Optional:
+8. Edit a list
+9. Edit an album
+10. Delete a list
+11. Delete an album
+12. Additional data for lists (e.g. descriptions)
+13. Additional data for albums
+14. Enable user to attach custom photo to list
+15. Enable user to attach album photo via google api call 
 
 1-4 are more pressing, just so you have a better idea for how it all works.
 5-7 would be nice, but not totally necessary
